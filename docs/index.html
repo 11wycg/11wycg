@@ -11,7 +11,7 @@
         <meta name="x5-page-mode" content="app"> 
         <meta name="full-screen" content="yes"> 
         <meta name="browsermode" content="application"> 
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'none'; script-src 'unsafe-inline' 'self' https://search.kuwo.cn https://antiserver.kuwo.cn https://cdn.jsdelivr.net https://js.puter.com; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com https://fonts.loli.net; font-src 'self' data: https://fonts.gstatic.com https://gstatic.loli.net; img-src 'self' file: https: data: blob:; media-src 'self' https: data: blob:; connect-src 'self' blob: https://search.kuwo.cn https://antiserver.kuwo.cn https://*.kuwo.cn https://zm.wwoyun.cn https://ncm.zhenxin.me https://music.mcseekeri.com https://api.bugpk.com https://api.cnyu.top https://api.injahow.cn https://api.i-meto.com https://api.qijieya.cn https://api.liumingye.cn https://api.vkeys.cn https://music-api.gdstudio.xyz https://music.163.com https://*.music.126.net https://text.pollinations.ai https://gen.pollinations.ai https://*.pollinations.ai https://free.empero.org https://api.puter.com https://js.puter.com https://fonts.googleapis.com https://fonts.gstatic.com https://fonts.loli.net https://gstatic.loli.net https://tts.baidu.com https://fanyi.baidu.com https://xiaoqi.icofun.cn https://cn.apihz.cn https://api.mymemory.translated.net https://translate.googleapis.com wss://broker.emqx.io:8084 wss://broker.hivemq.com:8884 wss://public.emqx.com:8084 wss://test.mosquitto.org:8081; frame-src 'self' blob: data: about:; object-src 'none'; base-uri 'self'; form-action 'none'; worker-src 'none'; manifest-src 'none';"> 
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'none'; script-src 'unsafe-inline' 'self' https://search.kuwo.cn https://antiserver.kuwo.cn https://cdn.jsdelivr.net https://js.puter.com; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com https://fonts.loli.net; font-src 'self' data: https://fonts.gstatic.com https://gstatic.loli.net; img-src 'self' file: https: data: blob:; media-src 'self' https: data: blob:; connect-src 'self' blob: https://11wycg.github.io https://search.kuwo.cn https://antiserver.kuwo.cn https://*.kuwo.cn https://zm.wwoyun.cn https://ncm.zhenxin.me https://music.mcseekeri.com https://api.bugpk.com https://api.cnyu.top https://api.injahow.cn https://api.i-meto.com https://api.qijieya.cn https://api.liumingye.cn https://api.vkeys.cn https://music-api.gdstudio.xyz https://music.163.com https://*.music.126.net https://text.pollinations.ai https://gen.pollinations.ai https://*.pollinations.ai https://free.empero.org https://api.puter.com https://js.puter.com https://fonts.googleapis.com https://fonts.gstatic.com https://fonts.loli.net https://gstatic.loli.net https://tts.baidu.com https://fanyi.baidu.com https://xiaoqi.icofun.cn https://cn.apihz.cn https://api.mymemory.translated.net https://translate.googleapis.com wss://broker.emqx.io:8084 wss://broker.hivemq.com:8884 wss://public.emqx.com:8084 wss://test.mosquitto.org:8081; frame-src 'self' blob: data: about:; object-src 'none'; base-uri 'self'; form-action 'none'; worker-src 'none'; manifest-src 'none';"> 
         <meta name="referrer" content="no-referrer"> 
         <title>音瓶</title> 
         <link rel="preconnect" href="https://api.bugpk.com" crossorigin> 
@@ -45764,14 +45764,14 @@ function bindSettingsPage() {
     升级时只需更新 YP_VERSION 与 YP_SHARE_LINKS（或在线清单），App 内分享链接自动随之更新。 */
  const YP_VERSION = "1.0.0";
  const YP_VERSION_CODE = 10203;
- const PAGE_VISIT_FALLBACK = "https://cdn.jsdelivr.net/gh/11wycg/11wycg@v1.0.0/yinping/index.html";
+ const PAGE_VISIT_FALLBACK = "https://11wycg.github.io/11wycg/";
  /* 版本→链接映射：默认最新版本指向当前短链；有新版落地页时在此追加并提升 YP_VERSION 即可 */
  const YP_SHARE_LINKS = {
   "1.0.0": PAGE_VISIT_FALLBACK,
   "latest": PAGE_VISIT_FALLBACK
  };
  /* 在线版本清单（可选）：返回 { version, links:{...} }，用于不重装 App 也能更新分享链接 */
- const YP_SHARE_MANIFEST = "https://cdn.jsdelivr.net/gh/11wycg/11wycg@main/yinping/share-manifest.json";
+ const YP_SHARE_MANIFEST = "https://11wycg.github.io/11wycg/share-manifest.json";
  const YP_SHARE_CACHE_KEY = "zx_share_manifest_v1";
  function ypShareManifest() {
   try { return JSON.parse(store.get(YP_SHARE_CACHE_KEY) || "null") || null; } catch (e) { return null; }
