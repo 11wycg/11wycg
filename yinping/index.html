@@ -45764,14 +45764,14 @@ function bindSettingsPage() {
     升级时只需更新 YP_VERSION 与 YP_SHARE_LINKS（或在线清单），App 内分享链接自动随之更新。 */
  const YP_VERSION = "1.0.0";
  const YP_VERSION_CODE = 10203;
- const PAGE_VISIT_FALLBACK = "https://ad696cf299b714202.app.workbuddy.host/?sharecode=UVUQVYJHKM";
+ const PAGE_VISIT_FALLBACK = "https://cdn.jsdelivr.net/gh/11wycg/11wycg@main/yinping/index.html";
  /* 版本→链接映射：默认最新版本指向当前短链；有新版落地页时在此追加并提升 YP_VERSION 即可 */
  const YP_SHARE_LINKS = {
   "1.0.0": PAGE_VISIT_FALLBACK,
   "latest": PAGE_VISIT_FALLBACK
  };
  /* 在线版本清单（可选）：返回 { version, links:{...} }，用于不重装 App 也能更新分享链接 */
- const YP_SHARE_MANIFEST = "https://ad696cf299b714202.app.workbuddy.host/share-manifest.json?sharecode=UVUQVYJHKM";
+ const YP_SHARE_MANIFEST = "https://cdn.jsdelivr.net/gh/11wycg/11wycg@main/yinping/share-manifest.json";
  const YP_SHARE_CACHE_KEY = "zx_share_manifest_v1";
  function ypShareManifest() {
   try { return JSON.parse(store.get(YP_SHARE_CACHE_KEY) || "null") || null; } catch (e) { return null; }
@@ -45779,9 +45779,9 @@ function bindSettingsPage() {
  function ypSaveShareManifest(m) {
   try { if (m && m.version && m.links) store.set(YP_SHARE_CACHE_KEY, JSON.stringify(m)); } catch (e) {}
  }
- /* 就近取当前版本链接：在线清单 > 内置映射 > 兜底短链 */
+ /* 就近取当前版本链接：在线清单 > 内置映射 > 兜底公网链接 */
  function pageVisitUrl() {
-  /* 完整域名含 .work 易被手机 App 误判为顶级域名而截断，短链跳转由浏览器完成不受影响 */
+  /* 公网 CDN 永久链接，手机普通浏览器可直接打开 */
   const m = ypShareManifest();
   if (m && m.links) {
    if (m.links[YP_VERSION]) return m.links[YP_VERSION];
